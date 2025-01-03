@@ -334,6 +334,145 @@ car._display_details()
 
 """..............................................inheritance................................................."""
 
+
+# single inheritance
+
+"""In single inheritance, a subclass inherits from only one superclass.
+"""
+
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+        
+
+dog = Dog()
+dog.sound()
+dog.bark()
+
+
+
+
+"""......................................................................................................."""
+
+
+
+#Multiple Inheritance
+
+"""In multiple inheritance, a subclass inherits from more than one superclass.
+Python allows this, but it's important to handle potential conflicts
+that may arise if the same method is defined in multiple base classes."""
+
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+        
+class Flyable:
+    def fly(self):
+        print("Flyable can fly")
+        
+class Bird(Animal, Flyable):
+    def sing(self):
+        print("Bird sings")
+        
+bird = Bird()
+bird.sound()
+bird.fly()
+bird.sing()
+
+
+
+""".................................................................................................................."""
+
+
+#multilevel inheritance
+
+
+"""In multilevel inheritance, a subclass derives from another subclass, creating a chain of inheritance."""
+
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+        
+class Puppy(Dog):
+    def wag_tail(self):
+        print("Puppy wags its tail")
+        
+puppy = Puppy()
+puppy.sound()
+puppy.bark()
+puppy.wag_tail()
+
+
+""".........................................................................................................."""
+
+#Hierarchical Inheritance
+
+"""In hierarchical inheritance, multiple subclasses inherit from the same superclass."""
+
+class Animal:
+    def sound(self):
+        print("animal makes a sound")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+        
+class Cat(Animal):
+    def meow(self):
+        print("Cat meows")
+        
+dog = Dog()
+dog.sound()
+dog.bark()
+
+cat = Cat()
+cat.sound()
+cat.meow()
+
+
+""".........................................................................................................."""
+
+
+#Hybrid Inheritance
+
+"""Hybrid inheritance is a combination of more than one type of inheritance. 
+It can combine multiple inheritance, multilevel inheritance, etc."""
+
+
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+        
+class Mammal:
+    def walk(self):
+        print("Mammal walks")
+        
+class Dog(Animal, Mammal):
+    def bark(self):
+        print("Dog barks")
+        
+class Puppy(Dog):
+    def wag_tail(self):
+        print("Puppy wags its tail")
+        
+puppy = Puppy()
+puppy.sound() #inherited from Animal
+puppy.bark() #inherited from Dog
+puppy.walk() #inherited from Mammal
+puppy.wag_tail() #defined in Puppy
+
+
+
+"""..............................................................................................."""
+
 #Create a base class Animal with a method sound(). 
 # Create derived classes Dog and Cat that override the sound() method.
 
