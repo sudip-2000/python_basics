@@ -293,13 +293,47 @@ print(celsius_to_fahrenheit(98))
 
 #Write a function that flattens a nested list into a single-level list.
 
+
 def flatten_list_func(list_1):
     list_2=[]
+
     for i in list_1:
         list_2.extend(i)
+        
     return list_2
-
+    
 print(flatten_list_func([[1,2,3], [4,5,6], [7,8,9]]))
+
+""" it only handles one level of nesting in the lists.
+If the input list contains nested lists at more than one level,
+this method won't fully flatten the list,
+because it doesn't handle lists within lists within lists."""
+
+
+
+#incase of list within list within list
+
+
+def flatten_list_func(list_1):
+    result=[]
+
+    for i in list_1:
+        if isinstance(i, list):
+            result.extend(flatten_list_func(i))
+        else:
+            result.append(i)
+
+    return result
+
+print(flatten_list_func([[1,2,3], [4,[5,0],6], [7,8,9]]))
+
+
+
+"""........................................................................................................"""
+
+
+
+
 
 
 
