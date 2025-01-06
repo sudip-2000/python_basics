@@ -382,6 +382,7 @@ bird = Bird()
 bird.sound()
 bird.fly()
 bird.sing()
+print(Bird.mro())
 
 
 
